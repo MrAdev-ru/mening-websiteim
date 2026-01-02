@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Site keywords here">
+    <meta name="description" content="">
+    <meta name='copyright' content=''>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Title -->
+    <title>Admin Login - Family MED</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../img/familymed.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="../css/nice-select.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <!-- icofont CSS -->
+    <link rel="stylesheet" href="../css/icofont.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" href="../css/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../css/animate.min.css">
+    
+    <!-- Medipro CSS -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Custom Login CSS -->
+   <style>
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #046cd3 0%, #e00909 100%);
+        }
+        
+        .login-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        .login-header {
+            background: linear-gradient(135deg, #046cd3 0%, #e73030 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .login-header h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .login-header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+            color: #f0f0f0;
+        }
+        
+        .login-body {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #000000;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #0d32d8;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #046cd3 0%, #ff0000 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: #eee;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 15px;
+            color: #666;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .google-login {
+            width: 100%;
+            padding: 12px;
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .google-login:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .google-login img {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .forgot-password {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .forgot-password a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-home {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .back-home a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .back-home a:hover {
+            color: #667eea;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 10px;
+            }
+            
+            .login-card {
+                margin: 20px;
+            }
+            
+            .login-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-outter"></div>
+            <div class="loader-inner"></div>
+            <div class="indicator"> 
+                <svg width="16px" height="12px">
+                    <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Login Header -->
+            <div class="login-header">
+                <h2>Admin Login</h2>
+                <p>Family MED Management System</p>
+            </div>
+            
+            <!-- Login Body -->
+            <div class="login-body">
+                <!-- Login Form -->
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminUsername">Admin ID / Username</label>
+                        <input type="text" 
+                               id="adminUsername" 
+                               class="form-control" 
+                               placeholder="Enter admin username"
+                               required>
+                        <div class="error-message" id="usernameError">
+                            Please enter a valid username
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" 
+                               id="adminPassword" 
+                               class="form-control" 
+                               placeholder="Enter password"
+                               required>
+                        <div class="error-message" id="passwordError">
+                            Password must be at least 6 characters
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">
+                        <i class="fa fa-sign-in"></i> Login as Admin
+                    </button>
+                </form>
+                
+                <!-- Divider -->
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+                
+                <!-- Google Login -->
+                <button class="google-login" id="googleLoginBtn">
+                    <img src="https://www.google.com/favicon.ico" alt="Google">
+                    Sign in with Google
+                </button>
+                
+                <!-- Forgot Password -->
+                <div class="forgot-password">
+                    <a href="#" id="forgotPassword">Forgot Password?</a>
+                </div>
+                
+                <!-- Back to Home -->
+                <div class="back-home">
+                    <a href="../index.html">
+                        <i class="fa fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jquery Min JS -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- jquery Migrate JS -->
+    <script src="../js/jquery-migrate-3.0.0.js"></script>
+    <!-- Easing JS -->
+    <script src="../js/easing.js"></script>
+    <!-- Popper JS -->
+    <script src="../js/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="../js/bootstrap.min.js"></script>
+    
+    <!-- Login Script - FIXED VERSION -->
+    <script>
+        $(document).ready(function() {
+            // Remove preloader
+            $('.preloader').fadeOut();
+            
+            // Form validation
+            $('#adminLoginForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                const username = $('#adminUsername').val().trim();
+                const password = $('#adminPassword').val();
+                
+                // Reset errors
+                $('.error-message').hide();
+                $('.form-control').removeClass('error');
+                
+                // Validate
+                let isValid = true;
+                
+                if (!username) {
+                    $('#usernameError').show();
+                    $('#adminUsername').addClass('error');
+                    isValid = false;
+                }
+                
+                if (!password || password.length < 6) {
+                    $('#passwordError').show();
+                    $('#adminPassword').addClass('error');
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Simulate login process
+                    $('.btn-login').html('<i class="fa fa-spinner fa-spin"></i> Logging in...');
+                    $('.btn-login').prop('disabled', true);
+                    
+                    // Demo credentials
+                    const demoCredentials = [
+                        { username: 'admin', password: 'admin123' },
+                        { username: 'superadmin', password: 'superadmin123' }
+                    ];
+                    
+                    // Simulate API call delay
+                    setTimeout(() => {
+                        const isValidLogin = demoCredentials.some(cred => 
+                            cred.username === username && cred.password === password
+                        );
+                        
+                        if (isValidLogin) {
+                            // SUCCESS - Redirect immediately
+                            console.log('Login successful! Redirecting...');
+                            
+                            // Use absolute path for reliable redirect
+                            const currentPath = window.location.pathname;
+                            const dashboardPath = currentPath.replace('Admin.html', 'admin-dashboard.html');
+                            
+                            // Ensure we're going to the right location
+                            console.log('Redirecting to:', dashboardPath);
+                            window.location.href = dashboardPath;
+                            
+                            // Don't show alert - it blocks redirect
+                            return; // Exit early
+                            
+                        } else {
+                            // Failed login
+                            alert('Invalid credentials. Please try again.');
+                        }
+                        
+                        $('.btn-login').html('<i class="fa fa-sign-in"></i> Login as Admin');
+                        $('.btn-login').prop('disabled', false);
+                    }, 1000); // Reduced delay for better UX
+                }
+            });
+            
+            // Google login
+            $('#googleLoginBtn').on('click', function() {
+                $(this).html('<i class="fa fa-spinner fa-spin"></i> Connecting...');
+                $(this).prop('disabled', true);
+                
+                setTimeout(() => {
+                    alert('Google login would open authentication window. This is a demo.');
+                    $(this).html('<img src="https://www.google.com/favicon.ico" alt="Google"> Sign in with Google');
+                    $(this).prop('disabled', false);
+                }, 1000);
+            });
+            
+            // Forgot password
+            $('#forgotPassword').on('click', function(e) {
+                e.preventDefault();
+                const email = prompt('Please enter your admin email to reset password:');
+                if (email) {
+                    alert('Password reset link has been sent to ' + email);
+                }
+            });
+            
+            // Add error class styling
+            $('<style>').text('.form-control.error { border-color: #e74c3c; }').appendTo('head');
+            
+            // Debug: Check if dashboard file exists
+            console.log('Admin login page loaded');
+            console.log('Dashboard should be at: login/admin-dashboard.html');
+        });
+        
+        // Simple direct login function for testing
+        function directLogin(username, password) {
+            if ((username === 'admin' && password === 'admin123') || 
+                (username === 'superadmin' && password === 'superadmin123')) {
+                window.location.href = 'admin-dashboard.html';
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
